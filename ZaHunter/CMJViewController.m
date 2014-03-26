@@ -32,6 +32,8 @@
     
     //turning on the coreLocationManager to start getting updates
     [self.coreLocationManager startUpdatingLocation];
+    
+    self.coreLocationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
 }
 
 //tells us where the phone is (delegate)
@@ -77,7 +79,7 @@
     //self.title = @"YOU ARE GUILTY";
     MKLocalSearchRequest* request = [MKLocalSearchRequest new];
     request.naturalLanguageQuery = type;
-    request.region = MKCoordinateRegionMake(placemark.location.coordinate, MKCoordinateSpanMake(1, 1));
+    request.region = MKCoordinateRegionMake(placemark.location.coordinate, MKCoordinateSpanMake(0.1, 0.1));
     
     MKLocalSearch* search = [[MKLocalSearch alloc] initWithRequest:request];
     [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
@@ -90,6 +92,47 @@
         [self.myTableView reloadData];
     }];
 }
+
+//directions from one map item to another
+-(void) shortestRoutefromRestaurant: (MKMapItem*) destinationMapItem
+{
+    MKDirectionsRequest *request = [MKDirectionsRequest new];
+    request.source = [MKMapItem mapItemForCurrentLocation];
+    request.transportType = MKDirectionsTransportTypeWalking;
+    request.destination = destinationMapItem;
+    
+    MKDirections *directions = [[MKDirections alloc] initWithRequest:request];
+    [directions calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *response, NSError *error) {
+        
+        //you get back a MK Direction type of called response, it has a property called routes which is an array
+        //NSArray *routesArray = response.routes;
+        //call the view controllers method (self) ((whatever object you are currently in))
+        [self findShortestPath:response.routes];
+        NSLog(@"%@", response.routes);
+    }];
+}
+
+-(MKRoute*) findShortestPath: (NSArray*)routes
+{
+    //creating an variable and setting it eqaul to the first object in routes
+    MKRoute* shortestRoute = routes.firstObject;
+    //quickest way to go through an array
+    //here we're going through the array and finding the minimum. We're saying that if currentRoute (which is set the value of the first object in routes is
+    for (MKRoute* currentRoute in routes)
+    {
+        if (currentRoute.distance < shortestRoute.distance)
+        {
+            shortestRoute = currentRoute;
+            
+        }
+    
+    }
+    NSLog(@"%@", shortestRoute);
+    return shortestRoute;
+}
+
+
+
 
 
 
