@@ -21,6 +21,8 @@
 		70BCE9B618E35B020079A5E8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70BCE99818E35B010079A5E8 /* UIKit.framework */; };
 		70BCE9BE18E35B020079A5E8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 70BCE9BC18E35B020079A5E8 /* InfoPlist.strings */; };
 		70BCE9C018E35B020079A5E8 /* ZaHunterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 70BCE9BF18E35B020079A5E8 /* ZaHunterTests.m */; };
+		70BCE9CA18E35CF50079A5E8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70BCE9C918E35CF50079A5E8 /* CoreLocation.framework */; };
+		70BCE9CC18E35CFE0079A5E8 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70BCE9CB18E35CFE0079A5E8 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		70BCE9BB18E35B020079A5E8 /* ZaHunterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ZaHunterTests-Info.plist"; sourceTree = "<group>"; };
 		70BCE9BD18E35B020079A5E8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		70BCE9BF18E35B020079A5E8 /* ZaHunterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZaHunterTests.m; sourceTree = "<group>"; };
+		70BCE9C918E35CF50079A5E8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		70BCE9CB18E35CFE0079A5E8 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70BCE9CC18E35CFE0079A5E8 /* MapKit.framework in Frameworks */,
+				70BCE9CA18E35CF50079A5E8 /* CoreLocation.framework in Frameworks */,
 				70BCE99718E35B010079A5E8 /* CoreGraphics.framework in Frameworks */,
 				70BCE99918E35B010079A5E8 /* UIKit.framework in Frameworks */,
 				70BCE99518E35B010079A5E8 /* Foundation.framework in Frameworks */,
@@ -101,6 +107,8 @@
 		70BCE99318E35B010079A5E8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				70BCE9CB18E35CFE0079A5E8 /* MapKit.framework */,
+				70BCE9C918E35CF50079A5E8 /* CoreLocation.framework */,
 				70BCE99418E35B010079A5E8 /* Foundation.framework */,
 				70BCE99618E35B010079A5E8 /* CoreGraphics.framework */,
 				70BCE99818E35B010079A5E8 /* UIKit.framework */,
@@ -457,6 +465,7 @@
 				70BCE9C518E35B020079A5E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		70BCE9C618E35B020079A5E8 /* Build configuration list for PBXNativeTarget "ZaHunterTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +474,7 @@
 				70BCE9C818E35B020079A5E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
