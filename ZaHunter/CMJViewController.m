@@ -106,7 +106,7 @@
     
     MKMapItem* restaurant = self.restaurants[indexPath.row];
     cell.textLabel.text = restaurant.name;
-
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", restaurant.placemark];
     return cell;
     
 }
